@@ -29,13 +29,13 @@
 	function alertShow()
 	{
 swal.queue([{
-  title: 'Your public IP',
+  title: 'Count of randoise symbols',
   //html: "<input type='number' class='form-contol'>",
   input: 'number',
   inputAttributes: {'min': 1, 'id': 'count',},
-  confirmButtonText: 'Show my public IP',
+  confirmButtonText: 'Randomise',
   text:
-    'Your public IP will be received ' +
+    'Randomise text ' +
     'via AJAX request',
   showLoaderOnConfirm: true,
   preConfirm: function (number) {
@@ -45,27 +45,19 @@ swal.queue([{
 		var text = $('#text').val();
 		var arr = text.split("\n");        	
     	
-
-
 				var n = arr.length;
-				var sum = 0;
-				var unique = true;
+				var randText = '';
 				for(var j=1; j<=parseInt(number); j++)
 					findWinner();
+
 				function findWinner() {
 					n = arr.length;
 					var i = Math.floor(Math.random() * Math.floor(n));
-					//while(typeof phones[i] === "undefined" && index.length < phones.length)
-						//i = Math.floor(Math.random() * Math.floor(n));
-					
+					randText += arr[i]+"\n";
 					console.log(arr[i]+" - "+i);
-					swal.insertQueueStep(arr[i]);     
 					arr.splice(i,1);
-					//delete phones[i];
-					//index.push(i);
 				}
-
-    	//swal.insertQueueStep(text)        	
+				swal.insertQueueStep(randText);     
     	resolve()
     	},2000)
     })
