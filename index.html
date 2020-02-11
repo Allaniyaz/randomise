@@ -28,35 +28,6 @@
 <script type="text/javascript">
 	function alertShow()
 	{
-swal({
-  title: 'Submit email to run ajax request',
-  input: 'email',
-  showCancelButton: true,
-  confirmButtonText: 'Submit',
-  showLoaderOnConfirm: true,
-  preConfirm: function (email) {
-    return new Promise(function (resolve, reject) {
-      setTimeout(function() {
-        if (email === 'taken@example.com') {
-          reject('This email is already taken.')
-        } else {
-          resolve()
-        }
-      }, 2000)
-    })
-  },
-  allowOutsideClick: false
-}).then(function (email) {
-  swal({
-    type: 'success',
-    title: 'Ajax request finished!',
-    html: 'Submitted email: ' + email
-  })
-})
-
-
-
-
 swal.queue([{
   title: 'Your public IP',
   //html: "<input type='number' class='form-contol'>",
@@ -71,7 +42,30 @@ swal.queue([{
     return new Promise(function (resolve) {
         
         setTimeout(function () {
-    	swal.insertQueueStep($('#count').val())        	
+		var text = $('#text').val();
+		var arr = text.split("\n");        	
+    	
+
+
+				var n = arr.length;
+				var sum = 0;
+				var unique = true;
+				for(var j=1; j<=parseInt(number); j++)
+					findWinner();
+				function findWinner() {
+					n = arr.length;
+					var i = Math.floor(Math.random() * Math.floor(n));
+					//while(typeof phones[i] === "undefined" && index.length < phones.length)
+						//i = Math.floor(Math.random() * Math.floor(n));
+					
+					console.log(arr[i]+" - "+i);
+					swal.insertQueueStep(arr[i]);     
+					arr.splice(i,1);
+					//delete phones[i];
+					//index.push(i);
+				}
+
+    	//swal.insertQueueStep(text)        	
     	resolve()
     	},2000)
     })
