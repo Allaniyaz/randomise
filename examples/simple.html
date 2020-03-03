@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Randoming numbers</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.min.css">
+	<script type="text/javascript" src="../js/jquery/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
+	
+
+	<style type="text/css">
+		.XXX {width: 70px; height: 90px;   -moz-border-radius: 0.1em; -webkit-border-radius: 0.1em; border-radius: 0.1em; border-color: black; overflow:hidden;float:left}
+		.X {font-size:60px;width:100%;text-align:center; height:80px; padding-top: 0;}/* << вот тут 80!!!*/	
+	</style>
+	
+</head>
+<body>
+<div class="container" style="margin: 20px 20px 20px 20px;">
+<div class="row">
+	<h2>Chars Form </h2><br>
+</div>
+<div class="row">
+	<textarea class="numbers" id="text" name="numbers" cols="30" rows="10" class="form-control"></textarea>
+</div>
+<div class="row">
+	<div id='xxx0' class='XXX'>
+		<div class='X'>9</div>
+		<div class='X'>1</div> <!-- а вот тут - 10 картинок -->
+		<div class='X'>2</div>
+		<div class='X'>3</div>
+		<div class='X'>4</div>
+		<div class='X'>5</div>
+		<div class='X'>6</div>
+		<div class='X'>7</div>
+		<div class='X'>8</div>
+		<div class='X'>9</div>
+	</div>
+	<div id='xxx00' class='XXX'>
+		<div class='X'>9</div>
+		<div class='X'>1</div> <!-- а вот тут - 10 картинок -->
+		<div class='X'>9</div>
+		<div class='X'>0</div>
+		<div class='X'>6</div>
+		<div class='X'>7</div>
+		<div class='X'>3</div>
+		<div class='X'>8</div>
+		<div class='X'>2</div>
+		<div class='X'>4</div>
+	</div>	
+	<div id='xxx000' class='XXX'>
+		<div class='X'>8</div>
+		<div class='X'>1</div> <!-- а вот тут - 10 картинок -->
+		<div class='X'>9</div>
+		<div class='X'>0</div>
+		<div class='X'>6</div>
+		<div class='X'>7</div>
+		<div class='X'>3</div>
+		<div class='X'>8</div>
+		<div class='X'>2</div>
+		<div class='X'>4</div>
+	</div>
+	<div id='xxx1' class='XXX'>
+		<div class='X'>0</div>
+		<div class='X'>1</div>
+		<div class='X'>2</div> <!-- а вот тут - 10 картинок -->
+		<div class='X'>3</div>
+		<div class='X'>4</div>
+		<div class='X'>5</div>
+		<div class='X'>6</div>
+		<div class='X'>7</div>
+		<div class='X'>8</div>
+		<div class='X'>9</div>
+		<div class='X'>0</div>
+	</div>	
+	<div id='xxx2' class='XXX'>
+		<div class='X'>0</div>
+		<div class='X'>1</div>
+		<div class='X'>2</div> <!-- а вот тут - 10 картинок -->
+		<div class='X'>3</div>
+		<div class='X'>4</div>
+		<div class='X'>5</div>
+		<div class='X'>6</div>
+		<div class='X'>7</div>
+		<div class='X'>8</div>
+		<div class='X'>9</div>
+		<div class='X'>0</div>
+	</div>	
+	<div id='xxx3' class='XXX'>
+		<div class='X'>0</div>
+		<div class='X'>1</div>
+		<div class='X'>2</div> <!-- а вот тут - 10 картинок -->
+		<div class='X'>3</div>
+		<div class='X'>4</div>
+		<div class='X'>5</div>
+		<div class='X'>6</div>
+		<div class='X'>7</div>
+		<div class='X'>8</div>
+		<div class='X'>9</div>
+		<div class='X'>0</div>
+	</div>	
+	<div id='xxx4' class='XXX'>
+		<div class='X'>0</div>
+		<div class='X'>1</div>
+		<div class='X'>2</div> <!-- а вот тут - 10 картинок -->
+		<div class='X'>3</div>
+		<div class='X'>4</div>
+		<div class='X'>5</div>
+		<div class='X'>6</div>
+		<div class='X'>7</div>
+		<div class='X'>8</div>
+		<div class='X'>9</div>
+		<div class='X'>0</div>
+	</div>	
+	<div id='xxx5' class='XXX'>
+		<div class='X'>0</div>
+		<div class='X'>1</div>
+		<div class='X'>2</div> <!-- а вот тут - 10 картинок -->
+		<div class='X'>3</div>
+		<div class='X'>4</div>
+		<div class='X'>5</div>
+		<div class='X'>6</div>
+		<div class='X'>7</div>
+		<div class='X'>8</div>
+		<div class='X'>9</div>
+		<div class='X'>0</div>
+	</div>	
+	<div id='xxx6' class='XXX'>
+		<div class='X'>0</div>
+		<div class='X'>1</div>
+		<div class='X'>2</div> <!-- а вот тут - 10 картинок -->
+		<div class='X'>3</div>
+		<div class='X'>4</div>
+		<div class='X'>5</div>
+		<div class='X'>6</div>
+		<div class='X'>7</div>
+		<div class='X'>8</div>
+		<div class='X'>9</div>
+		<div class='X'>0</div>
+	</div>	
+	<div id='xxx7' class='XXX'>
+		<div class='X'>0</div>
+		<div class='X'>1</div>
+		<div class='X'>2</div> <!-- а вот тут - 10 картинок -->
+		<div class='X'>3</div>
+		<div class='X'>4</div>
+		<div class='X'>5</div>
+		<div class='X'>6</div>
+		<div class='X'>7</div>
+		<div class='X'>8</div>
+		<div class='X'>9</div>
+		<div class='X'>0</div>
+	</div>		
+	<div id='xxx8' class='XXX'>
+		<div class='X'>0</div>
+		<div class='X'>1</div>
+		<div class='X'>2</div> <!-- а вот тут - 10 картинок -->
+		<div class='X'>3</div>
+		<div class='X'>4</div>
+		<div class='X'>5</div>
+		<div class='X'>6</div>
+		<div class='X'>7</div>
+		<div class='X'>8</div>
+		<div class='X'>9</div>
+		<div class='X'>0</div>
+	</div>	
+	<div id='xxx9' class='XXX'>
+		<div class='X'>9</div>
+		<div class='X'>1</div>
+		<div class='X'>2</div> <!-- а вот тут - 10 картинок -->
+		<div class='X'>3</div>
+		<div class='X'>4</div>
+		<div class='X'>5</div>
+		<div class='X'>6</div>
+		<div class='X'>7</div>
+		<div class='X'>8</div>
+		<div class='X'>0</div>
+	</div>	
+</div>
+<br><br><br>
+	
+
+	<input type='button' onclick='LetsGo()' value='!!!Исчо!!!'>
+</div>
+<script type="text/javascript" src="simple.js"></script>	
+</body>
+</html>

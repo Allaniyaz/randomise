@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Тосынарлы белгилер</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/odometer/themes/odometer-theme-train-station.css" />
+	<style>
+		.odometer {
+		  font-size: 40px;
+		}
+	</style>
+	<script>
+		window.odometerOptions = {
+		  format: '(ddd).dd'
+		};
+	</script>
+	<script src="js/odometer/odometer.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<h2 class="">Белгилер</h2>		
+			<div class="div-form">
+				<div class="input-group">
+					<textarea name="text" id="text" cols="30" rows="10" class="form-contol"></textarea>
+				</div><br>
+				<div class="input-group">
+					<input type="number" min="1" id="count" class="form-contol">
+				</div><br>
+				<div class="input-group">
+					<button type="button" class="form-contol btn btn-primary" onclick="alertShow()">Старт</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8" id="div-big">
+			<h2 class="">Тосынарлы белгилер</h2>		
+			<div class="div-form div-rand" style="display: none;">
+				<div class="odometer" id="gen1">998000000000</div><br><br>
+				<div class="odometer" id="gen2">998000000000</div><br><br>
+				<div class="odometer" id="gen3">998000000000</div><br><br>
+				<div class="odometer" id="gen4">998000000000</div><br><br>
+				<div class="odometer" id="gen5">998000000000</div><br><br>
+				<div class="odometer" id="gen6">998000000000</div><br><br>
+				<div class="odometer" id="gen7">998000000000</div><br><br>
+				<div class="odometer" id="gen8">998000000000</div><br><br>
+				<div class="odometer" id="gen9">998000000000</div><br><br>
+				<div class="odometer" id="gen10">998000000000</div><br><br>
+				<div class="odometer" id="gen11">998000000000</div><br><br>
+				<div class="odometer" id="gen12">998000000000</div><br><br>
+				<div class="odometer" id="gen13">998000000000</div><br><br>
+				<div class="odometer" id="gen14">998000000000</div><br><br>
+				<div class="odometer" id="gen15">998000000000</div><br><br>
+				<div class="odometer" id="gen16">998000000000</div><br><br>
+				<div class="odometer" id="gen17">998000000000</div><br><br>
+				<div class="odometer" id="gen18">998000000000</div><br><br>
+				<div class="odometer" id="gen19">998000000000</div><br><br>
+				<div class="odometer" id="gen20">998000000000</div><br><br>
+			</div>
+		</div>	
+	</div>
+</div>
+	
+<script type="text/javascript">
+	function alertShow()
+	{   
+		var number = $('#count').val();
+		$('.div-rand').show();
+		for(var l = parseInt(number)+1; l <= 20; l++)
+			$('#gen'+l).hide();
+		var text = $('#text').val();
+		var arr = text.split("\n");        	
+    	var randNums;
+
+		var n = arr.length;
+		var randText = '';
+		for(var j=1; j<=parseInt(number); j++) {
+			findWinner();	
+		}
+
+		function findWinner() {
+			n = arr.length;
+			var i = Math.floor(Math.random() * Math.floor(n));
+			randText += arr[i]+"\n";
+			//console.log(arr[i]+" - "+i);
+			arr.splice(i,1);
+		}
+		randNums = randText.split("\n");
+		randNums.splice(randNums.length-1,1);
+		
+		for(var k = 0; k < randNums.length; k++) {
+			//$('#generated').append("<div class='odometer'>100000000000</div><br>");  
+			$('#gen'+(k+1)).html(randNums[k]);			  
+		}
+  	}		
+</script>
+</body>
+</html>

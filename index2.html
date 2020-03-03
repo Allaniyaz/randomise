@@ -57,15 +57,15 @@ swal.queue([{
 					findWinner();	
 					$('.div-rand').append("<br><div class='input-group' id='input-group"+j+"'>");
 						$('.div-rand').append("<label>+998</label>");
-						$('.div-rand').append("<input type='number' class='digit digit1' min='0' max='9' width='10'>");
-						$('.div-rand').append("<input type='number' class='digit digit2' min='0' max='9' width='10'>");
-						$('.div-rand').append("<input type='number' class='digit digit3' min='0' max='9' width='10'>");
-						$('.div-rand').append("<input type='number' class='digit digit4' min='0' max='9' width='10'>");
-						$('.div-rand').append("<input type='number' class='digit digit5' min='0' max='9' width='10'>");
-						$('.div-rand').append("<input type='number' class='digit digit6' min='0' max='9' width='10'>");
-						$('.div-rand').append("<input type='number' class='digit digit7' min='0' max='9' width='10'>");
-						$('.div-rand').append("<input type='number' class='digit digit8' min='0' max='9' width='10'>");
-						$('.div-rand').append("<input type='number' class='digit digit9' min='0' max='9' width='10'>");
+						$('.div-rand').append("<input type='number' class='digit' id='digit"+j+"1' min='0' max='9' width='10'>");
+						$('.div-rand').append("<input type='number' class='digit' id='digit"+j+"2' min='0' max='9' width='10'>");
+						$('.div-rand').append("<input type='number' class='digit' id='digit"+j+"3' min='0' max='9' width='10'>");
+						$('.div-rand').append("<input type='number' class='digit' id='digit"+j+"4' min='0' max='9' width='10'>");
+						$('.div-rand').append("<input type='number' class='digit' id='digit"+j+"5' min='0' max='9' width='10'>");
+						$('.div-rand').append("<input type='number' class='digit' id='digit"+j+"6' min='0' max='9' width='10'>");
+						$('.div-rand').append("<input type='number' class='digit' id='digit"+j+"7' min='0' max='9' width='10'>");
+						$('.div-rand').append("<input type='number' class='digit' id='digit"+j+"8' min='0' max='9' width='10'>");
+						$('.div-rand').append("<input type='number' class='digit' id='digit"+j+"9' min='0' max='9' width='10'>");
 					$('.div-rand').append("</div><br><br>");
 				}
 
@@ -77,9 +77,14 @@ swal.queue([{
 					arr.splice(i,1);
 				}
 				randNums = randText.split("\n");
-				for(var k = 1; k <= randNums.length; k++) {
-					for(var l = 0; l < 9; l++)
-						$('.digit'+l).val(randNums[k][l]);
+				randNums.splice(randNums.length-1,1);
+				alert(randNums.length);
+				for(var k = 0; k < randNums.length; k++) {
+					var arrNew = randNums[k].split('');
+					alert(arrNew.length);
+					for(var l = 0; l < 9; l++) {
+						$('#digit'+(k+1)+''+(l+1)).val(arrNew[parseInt(l)]);
+					}
 				}
 				swal.insertQueueStep(randText);     
     	resolve()
@@ -90,5 +95,6 @@ swal.queue([{
 
 	}		
 </script>
+
 </body>
 </html>
