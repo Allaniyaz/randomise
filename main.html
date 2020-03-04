@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Тосынарлы белгилер</title>
+	<title>Лоторея</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
-	<script type="text/javascript" src="js/jquery/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/odometer/themes/odometer-theme-train-station.css" />
 	<link rel="stylesheet" type="text/css" href="css/loading/style.css">
+	<script type="text/javascript" src="js/jquery/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+<!-- SweetAlert2 js lib configuration > --->
+	<link rel="stylesheet" type="text/css" href="css/sweetalert/sweetalert2.min.css">
+	<script type="text/javascript" src="js/sweetalert/sweetalert2.all.min.js"></script>
+<!-- SweetAlert2 js lib configuration > --->
+
+<!-- ODOMETER js lib configuration > --->
 	<style>
 		.odometer {
 		  font-size: 40px;
@@ -18,47 +24,34 @@
 		};
 	</script>
 	<script src="js/odometer/odometer.min.js"></script>
+<!-- ODOMETER js lib configuration > --->
 </head>
 <body>
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			<h2 class="">Белгилер</h2>		
+			<h2 class="">Телефон номерлер</h2>		
 			<div class="div-form">
 				<div class="input-group">
-					<textarea name="text" id="text" cols="30" rows="10" class="form-contol"></textarea>
+					<textarea name="text" id="text" cols="33" rows="10" class="form-contol" placeholder="998901234567"></textarea>
 				</div><br>
 				<div class="input-group">
-					<input type="number" min="1" id="count" class="form-contol">
+					<h4>Жеңимпазлар саны</h4>&nbsp;&nbsp; 
+					<input type="number" value="1" min="1" length="20" id="count" class="form-contol" style="width: 60px;">
 				</div><br>
-				<div class="input-group">
-					<button type="button" class="form-contol btn btn-primary" onclick="alertShow()">Старт</button>
+				<div class="input-group" style="margin-left: 100px;">
+					<button type="button" class="form-contol btn btn-primary" onclick="alertShow()">Баслаў</button>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-8" id="div-big">
-			<h2 class="">Тосынарлы белгилер</h2>		
+			<h2 class="">Жеңимпазлар</h2>		
 			<div class="div-form div-rand" style="display: none;">
 				<div class="odometer" id="gen1">998000000000</div><br><br>
 				<div class="odometer" id="gen2">998000000000</div><br><br>
 				<div class="odometer" id="gen3">998000000000</div><br><br>
 				<div class="odometer" id="gen4">998000000000</div><br><br>
 				<div class="odometer" id="gen5">998000000000</div><br><br>
-				<div class="odometer" id="gen6">998000000000</div><br><br>
-				<div class="odometer" id="gen7">998000000000</div><br><br>
-				<div class="odometer" id="gen8">998000000000</div><br><br>
-				<div class="odometer" id="gen9">998000000000</div><br><br>
-				<div class="odometer" id="gen10">998000000000</div><br><br>
-				<div class="odometer" id="gen11">998000000000</div><br><br>
-				<div class="odometer" id="gen12">998000000000</div><br><br>
-				<div class="odometer" id="gen13">998000000000</div><br><br>
-				<div class="odometer" id="gen14">998000000000</div><br><br>
-				<div class="odometer" id="gen15">998000000000</div><br><br>
-				<div class="odometer" id="gen16">998000000000</div><br><br>
-				<div class="odometer" id="gen17">998000000000</div><br><br>
-				<div class="odometer" id="gen18">998000000000</div><br><br>
-				<div class="odometer" id="gen19">998000000000</div><br><br>
-				<div class="odometer" id="gen20">998000000000</div><br><br>
 			</div>
 		</div>	
 	</div>
@@ -66,22 +59,23 @@
 
 
 <div id="loading" style="display: none; margin: 0; position: absolute; left: 50%; top: 50%; transform: translate(0, -50%);">
-	<div class="load-3" style="padding-bottom: 10px;">
+	<div class="load-3" style="padding-bottom: 10px;">&nbsp;
 	    <div class="line"></div>
 	    <div class="line"></div>
 	    <div class="line"></div>
 	</div>
 	<div class="load-6">
-	  	<div class="l-1 letter">L</div>
-	  	<div class="l-2 letter">o</div>
-	  	<div class="l-3 letter">a</div>
-	  	<div class="l-4 letter">d</div>
-	  	<div class="l-5 letter">i</div>
-	  	<div class="l-6 letter">n</div>
-	  	<div class="l-7 letter">g</div>
-	  	<div class="l-8 letter">.</div>
+	  	<div class="l-1 letter">Ж</div>
+	  	<div class="l-2 letter">ү</div>
+	  	<div class="l-3 letter">к</div>
+	  	<div class="l-4 letter">л</div>
+	  	<div class="l-5 letter">е</div>
+	  	<div class="l-6 letter">н</div>
+	  	<div class="l-7 letter">и</div>
+	  	<div class="l-8 letter">ў</div>
 	  	<div class="l-9 letter">.</div>
 	  	<div class="l-10 letter">.</div>
+	  	<div class="l-11 letter">.</div>
 	</div>
 </div>
 
@@ -90,47 +84,86 @@
 <script type="text/javascript">
 	function alertShow()
 	{   
-		var number = $('#count').val();
-		$('#loading').show();
-		for(var l = parseInt(number)+1; l <= 20; l++)
-			$('#gen'+l).hide();			
-
-		setTimeout(function() {
-			$('.div-rand').show();
-		}, 2500);
-		setTimeout(function() {
-			$('.div-rand').show();
-			$('#loading').hide();
-		}, 3000);
-		
-	
-
 		var text = $('#text').val();
-		var arr = text.split("\n");        	
-    	var randNums;
+		var number = $('#count').val();
+		if(text != '')
+		{
+			var arr = text.split("\n");        	
+	    	var randNums;
+			var n = arr.length;
+			var randText = '';
+			var numbers = [];		
 
-		var n = arr.length;
-		var randText = '';
-		for(var j=1; j<=parseInt(number); j++) {
-			findWinner();	
-		}
+			///// -------------------  Checking entered symbols for numbers --------///					
+				for(var p = 0; p < n; p++) {
+					var str = arr[p];
+					if(str.length >= 12) 
+					{
+						var sum = 0;
+						for(var q = 0; 	q < str.length; q++) {
+							if(0*str[q] == 0) sum++;
+							else break;
+						}
+						if(sum != str.length) {
+							arr.splice(p, 1);
+							n = arr.length;
+							p--;							
+						}
+					}
+					else 
+					{
+						arr.splice(p, 1);
+						n = arr.length;
+						p--;
+					}
+				}
+			////  ----------------------------------------------------------------/////
 
-		function findWinner() {
-			n = arr.length;
-			var i = Math.floor(Math.random() * Math.floor(n));
-			randText += arr[i]+"\n";
-			//console.log(arr[i]+" - "+i);
-			arr.splice(i,1);
-		}
-		randNums = randText.split("\n");
-		randNums.splice(randNums.length-1,1);
+			//////--------------showing and hiding loading div-----------
+				$('#loading').show();
+				for(var l = parseInt(number)+1; l <= 20; l++)
+					$('#gen'+l).hide();			
+
+				setTimeout(function() {
+					$('.div-rand').show();
+				}, 2500);
+				setTimeout(function() {
+					$('.div-rand').show();
+					$('#loading').hide();
+				}, 3000);
+			//////--------------------------------------------------------
 		
-		setTimeout(function() {
-			for(var k = 0; k < randNums.length; k++) {
-				//$('#generated').append("<div class='odometer'>100000000000</div><br>");  
-				$('#gen'+(k+1)).html(randNums[k]);			  
+		
+			for(var j=1; j<=parseInt(number); j++) {
+				findWinner();	
 			}
-		}, 3500);
+
+			function findWinner() {
+				n = arr.length;
+				var i = Math.floor(Math.random() * Math.floor(n));
+				randText += arr[i]+"\n";
+				//console.log(arr[i]+" - "+i);
+				arr.splice(i,1);
+			}
+			randNums = randText.split("\n");
+			randNums.splice(randNums.length-1,1);
+			
+			setTimeout(function() {
+				for(var k = 0; k < randNums.length; k++) {
+					//$('#generated').append("<div class='odometer'>100000000000</div><br>");  
+					$('#gen'+(k+1)).html(randNums[k]);			  
+				}
+			}, 3500);
+		}
+		else 
+		{
+			swal({
+				type: 'error', 
+				title: "<span style='color: #dc3545;'>Қәтелик!</span>",
+				html: "Илтимас <span style='color: orange;'>Телефон номерлер</span> қатарын толдырың!",
+				confirmButtonText: 'Яқшы'
+			});
+		}
   	}		
 </script>
 </body>
