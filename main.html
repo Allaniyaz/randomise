@@ -26,26 +26,27 @@
 	<script src="js/odometer/odometer.min.js"></script>
 <!-- ODOMETER js lib configuration > --->
 </head>
-<body style="background-image: url('images/space.jpg'); background-size: 100% 100%;">
+<body style="background-image: url('images/istockphoto-495315046-1024x1024.jpg'); background-size: 100%; opacity: 0.9;">
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			<h2 class="">Телефон номерлер</h2>		
+			<h2 class="" style="color: orange;">Телефон номерлер</h2>		
 			<div class="div-form">
-				<div class="input-group">
-					<textarea name="text" id="text" cols="33" rows="10" class="form-contol" placeholder="998901234567"></textarea>
+				<div class="form-group">
+					<textarea name="text" id="text" cols="33" rows="10" class="form-control" placeholder="998901234567"></textarea>
 				</div><br>
 				<div class="input-group">
-					<h4>Жеңимпазлар саны</h4>&nbsp;&nbsp; 
-					<input type="number" value="1" min="1" length="20" id="count" class="form-contol" style="width: 60px;">
+					<h4 style="color: orange;">Жеңимпазлар саны</h4>&nbsp;&nbsp; 
+					<input type="number" value="1" min="1" length="20" id="count" class="form-control" style="width: 60px;">
 				</div><br>
-				<div class="input-group" style="margin-left: 100px;">
-					<button type="button" class="form-contol btn btn-primary" onclick="alertShow()">Баслаў</button>
+				<div class="input-group" style="justify-content: center;">
+					<button type="button" class="btn btn-primary" onclick="alertShow()">Баслаў</button>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-8" id="div-big">
-			<h2 class="">Жеңимпазлар</h2>		
+		<div class="col-md-2"></div>
+		<div class="col-md-6" id="div-big">
+			<h2 class="" style="color: orange;">Жеңимпазлар</h2>		
 			<div class="div-form div-rand" style="display: none;">
 				<div class="odometer" id="gen1">998000000000</div><br><br>
 				<div class="odometer" id="gen2">998000000000</div><br><br>
@@ -96,9 +97,9 @@
 
 			///// -------------------  Checking entered symbols for numbers --------///					
 				for(var p = 0; p < n; p++) {
-					var sss = arr[p]; 			/// Array lement to String
-					sss = sss.split(" ").join("");	/// Remove space in a String
-					var str = sss.split("");   	/// String to a new array
+					var sss = arr[p]; 				/// Array element to String
+					sss = sss.split(" ").join("");	/// Remove spaces in the String
+					var str = sss.split("");   		/// String to a new array
 					if(str.length >= 12) 
 					{
 						var sum = 0;
