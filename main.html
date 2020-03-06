@@ -96,18 +96,27 @@
 
 			///// -------------------  Checking entered symbols for numbers --------///					
 				for(var p = 0; p < n; p++) {
-					var str = arr[p];
+					var sss = arr[p]; 			/// Array lement to String
+					sss = sss.split(" ").join("");	/// Remove space in a String
+					var str = sss.split("");   	/// String to a new array
 					if(str.length >= 12) 
 					{
 						var sum = 0;
 						for(var q = 0; 	q < str.length; q++) {
 							if(0*str[q] == 0) sum++;
+							else if(str[q]=='+' || str[q]==" " || str[q]=='(' || str[q]==')' || str[q]=='-') {
+								str.splice(q, 1);
+								q--;
+							} 
 							else break;
 						}
 						if(sum != str.length) {
 							arr.splice(p, 1);
 							n = arr.length;
 							p--;							
+						}
+						else {
+							arr[p] = str.toString();
 						}
 					}
 					else 
