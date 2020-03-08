@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лоторея</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="css/odometer/themes/odometer-theme-train-station.css" />
+	<link rel="stylesheet" type="text/css" href="css/loading/style.css">
+	<script type="text/javascript" src="js/jquery/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+<!-- SweetAlert2 js lib configuration > --->
+	<link rel="stylesheet" type="text/css" href="css/sweetalert/sweetalert2.min.css">
+	<script type="text/javascript" src="js/sweetalert/sweetalert2.all.min.js"></script>
+<!-- SweetAlert2 js lib configuration > --->
+
+<!-- ODOMETER js lib configuration > --->
+	<style>
+		.odometer {
+		  font-size: 40px;
+		}
+	</style>
+	<script>
+		window.odometerOptions = {
+		  format: '(ddd).dd'
+		};
+	</script>
+	<script src="js/odometer/odometer.min.js"></script>
+<!-- ODOMETER js lib configuration > --->
+</head>
+<body style="/*background-image: url('images/istockphoto-495315046-1024x1024.jpg'); background-size: 100%; opacity: 0.9;">
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<h2 class="" style="color: orange;">Телефон номерлер</h2>		
+			<div class="div-form">
+				<div class="form-group">
+					<textarea name="text" id="text" cols="33" rows="10" class="form-control" placeholder="998901234567"></textarea>
+				</div><br>
+				<div class="input-group">
+					<h4 style="color: orange;">Жеңимпазлар саны</h4>&nbsp;&nbsp; 
+					<input type="number" value="1" min="1" length="20" id="count" class="form-control" style="width: 60px;">
+				</div><br>
+				<div class="input-group" style="justify-content: center;">
+					<button type="button" class="btn btn-primary" onclick="alertShow()">Баслаў</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2"></div>
+		<div class="col-md-6" id="div-big">
+			<h2 class="" style="color: orange;">Жеңимпазлар</h2>		
+			<div class="div-form div-rand" style="display: none;">
+				<div class="odometer" id="gen1">998000000000</div><br><br>
+				<div class="odometer" id="gen2">998000000000</div><br><br>
+				<div class="odometer" id="gen3">998000000000</div><br><br>
+				<div class="odometer" id="gen4">998000000000</div><br><br>
+				<div class="odometer" id="gen5">998000000000</div><br><br>
+			</div>
+		</div>	
+	</div>
+</div>
+
+
+<div id="loading" style="display: none; margin: 0; position: absolute; left: 50%; top: 50%; transform: translate(0, -50%);">
+	<div class="load-3" style="padding-bottom: 10px;">&nbsp;
+	    <div class="line"></div>
+	    <div class="line"></div>
+	    <div class="line"></div>
+	</div>
+	<div class="load-6">
+	  	<div class="l-1 letter">Ж</div>
+	  	<div class="l-2 letter">ү</div>
+	  	<div class="l-3 letter">к</div>
+	  	<div class="l-4 letter">л</div>
+	  	<div class="l-5 letter">е</div>
+	  	<div class="l-6 letter">н</div>
+	  	<div class="l-7 letter">и</div>
+	  	<div class="l-8 letter">ў</div>
+	  	<div class="l-9 letter">.</div>
+	  	<div class="l-10 letter">.</div>
+	  	<div class="l-11 letter">.</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+	localStorage.setItem('winCount', 0);
+	localStorage.setItem('winners', 0);
+
+	function alertShow()
+	{   
+		var text = $('#text').val();
+		var number = $('#count').val();
+		if(text != '')
+		{
+			var arr = text.split("\n");        	
+	    	var randNums;
+			var n = arr.length;
+			var randText = '';
+			var numbers = [];		
+
+			///// -------------------  Checking entered symbols for numbers --------///					
+				for(var p = 0; p < n; p++) {
+					var sss = arr[p]; 				/// Array element to String
+					sss = sss.split(" ").join("");	/// Remove spaces in the String
+					var str = sss.split("");   		/// String to a new array
+					if(str.length >= 12) 
+					{
+						var sum = 0;
+						for(var q = 0; 	q < str.length; q++) {
+							if(0*str[q] == 0) sum++;
+							else if(str[q]=='+' || str[q]==" " || str[q]=='(' || str[q]==')' || str[q]=='-') {
+								str.splice(q, 1);
+								q--;
+							} 
+							else break;
+						}
+						if(sum != str.length) {
+							arr.splice(p, 1);
+							n = arr.length;
+							p--;							
+						}
+						else {
+							arr[p] = str.join("");
+						}
+					}
+					else 
+					{
+						arr.splice(p, 1);
+						n = arr.length;
+						p--;
+					}
+				}
+			////  ----------------------------------------------------------------/////
+
+			//////--------------showing and hiding loading div-----------
+				$('#loading').show();
+
+				setTimeout(function() {
+					$('#loading').hide();
+				}, 3000);
+			//////--------------------------------------------------------
+		
+		
+			for(var j=1; j<=parseInt(number); j++) {
+				findWinner();	
+			}
+
+			function findWinner() {
+				n = arr.length;
+				var i = Math.floor(Math.random() * Math.floor(n));
+				randText += arr[i]+"\n";
+				//console.log(arr[i]+" - "+i);
+				arr.splice(i,1);
+			}
+			randNums = randText.split("\n");
+			randNums.splice(randNums.length-1,1);
+	
+			localStorage.setItem('winCount', number);
+			localStorage.setItem('winners', randNums);
+			var url = document.location.href;
+			url = url.split("");
+			url[url.length-6] = 2;
+			//document.location.href = url.join("");
+			
+			window.open(url.join(""), '', 'scrollbars=1,height='+Math.max(500, screen.availHeight)+',width='+Math.max(500, screen.availWidth));
+			/*setTimeout(function() {
+				for(var k = 0; k < randNums.length; k++) {
+					//$('#generated').append("<div class='odometer'>100000000000</div><br>");  
+					$('#gen'+(k+1)).html(randNums[k]);			  
+				}
+			}, 3500);*/
+	
+		}
+		else 
+		{
+			swal({
+				type: 'error', 
+				title: "<span style='color: #dc3545;'>Қәтелик!</span>",
+				html: "Илтимас <span style='color: orange;'>Телефон номерлер</span> қатарын толдырың!",
+				confirmButtonText: 'Яқшы'
+			});
+		}
+  	}		
+</script>
+</body>
+</html>

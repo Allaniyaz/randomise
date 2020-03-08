@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лоторея</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+<!-- TimeCircles css-js lib configuration >
+	<link rel="stylesheet" type="text/css" href="css/timecircles/TimeCircles.css">
+	<script type="text/javascript" src="js/timecircles/TimeCircles.min.js"></script>
+	TimeCircles css-js lib configuration > --->
+
+	<link rel="stylesheet" href="css/odometer/themes/odometer-theme-train-station.css" />
+	<link rel="stylesheet" type="text/css" href="css/loading/style.css">		
+<!-- ODOMETER js lib configuration > --->
+	<style>
+		.odometer {
+		  font-size: 40px;
+		}
+	</style>
+	<script>
+		window.odometerOptions = {
+//		  auto: false,
+//		  selector: '.odometer1',
+		  format: '(ddd).dd',
+		  //duration: 2000
+		};
+	</script>		
+	<script src="js/odometer/odometer.js"></script>
+
+<!-- ODOMETER js lib configuration > --->	
+</head>
+<body>
+
+	<div class="container">
+		<div class="row" style="justify-content: center;">
+			<div class="col-12 text-center" id="div-big">
+				<h2 class="" style="color: orange;">Жеңимпазлар <button class="btn btn-primary" onclick="showWinners()">Баслаў</button></h2><br>		
+				<div class="div-form div-rand" style="display: none;">
+					<div id="gen1">
+						<div class="odometer">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="code-country1">90</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="first-nums1">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="second-nums1">99</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="third-nums1">99</div> <br><br>
+					</div>
+					<div id="gen2">
+						<div class="odometer">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="code-country2">90</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="first-nums2">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="second-nums2">99</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="third-nums2">99</div> <br><br>
+					</div>
+					<div id="gen3">
+						<div class="odometer">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="code-country3">90</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="first-nums3">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="second-nums3">99</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="third-nums3">99</div> <br><br>
+					</div>
+					<div id="gen4">
+						<div class="odometer">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="code-country4">90</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="first-nums4">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="second-nums4">99</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="third-nums4">99</div> <br><br>
+					</div>
+					<div id="gen5">
+						<div class="odometer">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="code-country5">90</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="first-nums5">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="second-nums5">99</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="third-nums5">99</div> <br><br>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+
+<div id="loading" style="display: none; margin: 0; position: absolute; left: 50%; top: 50%; transform: translate(0, -50%);">
+	<div class="load-3" style="padding-bottom: 10px;">&nbsp;
+	    <div class="line"></div>
+	    <div class="line"></div>
+	    <div class="line"></div>
+	</div>
+	<div class="load-6">
+	  	<div class="l-1 letter">Ж</div>
+	  	<div class="l-2 letter">ү</div>
+	  	<div class="l-3 letter">к</div>
+	  	<div class="l-4 letter">л</div>
+	  	<div class="l-5 letter">е</div>
+	  	<div class="l-6 letter">н</div>
+	  	<div class="l-7 letter">и</div>
+	  	<div class="l-8 letter">ў</div>
+	  	<div class="l-9 letter">.</div>
+	  	<div class="l-10 letter">.</div>
+	  	<div class="l-11 letter">.</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+
+//$("#CountDownTimer").TimeCircles({ time: { Days: { show: false }, Hours: { show: false }, Minutes: { show: false } }});	
+
+
+function showWinners()
+{
+	var winners = localStorage.getItem('winners');
+	var winners = winners.split(",");
+	console.log(winners);
+	var winCount = parseInt(localStorage.getItem('winCount'));
+
+		
+		//////--------------showing and hiding loading div-----------
+			$('#loading').show();
+			for(var l = parseInt(winCount)+1; l <= 5; l++)
+				$('#gen'+l).hide();			
+
+			setTimeout(function() {
+				$('.div-rand').show();
+			}, 1000);
+			setTimeout(function() {
+				$('#loading').hide();
+			}, 1500);
+		//////--------------------------------------------------------
+
+		///// ---- It is made to longing time of scrolling numbers -----------/////////
+		setTimeout(function() {
+			for(var k = 0; k < winners.length; k++) {
+				$('#code-country'+(k+1)).html(10);
+				$('#first-nums'+(k+1)).html(100);			  
+				$('#second-nums'+(k+1)).html(10);
+				$('#third-nums'+(k+1)).html(10);
+			}
+		}, 2500);
+
+		setTimeout(function() {
+			for(var k = 0; k < winners.length; k++) {
+				$('#code-country'+(k+1)).html(61);
+				$('#first-nums'+(k+1)).html(289);			  
+				$('#second-nums'+(k+1)).html(76);
+				$('#third-nums'+(k+1)).html(45);
+			}
+		}, 3500);		
+
+		setTimeout(function() {
+			for(var k = 0; k < winners.length; k++) {
+				$('#code-country'+(k+1)).html(99);
+				$('#first-nums'+(k+1)).html(598);			  
+				$('#second-nums'+(k+1)).html(23);
+				$('#third-nums'+(k+1)).html(82);
+			}
+		}, 4500);
+
+		setTimeout(function() {
+			for(var k = 0; k < winners.length; k++) {
+				$('#code-country'+(k+1)).html(56);
+				$('#first-nums'+(k+1)).html(723);			  
+				$('#second-nums'+(k+1)).html(96);
+				$('#third-nums'+(k+1)).html(43);
+			}
+		}, 5500);
+		//////// ------------   ---------------------------------/////////
+
+		//// ------------------ There is main winners will be displayed --------///
+		var sss; // only was used to save as string of array elements
+		setTimeout(function() {
+			for(var k = 0; k < winners.length; k++) {
+				sss = winners[k];
+				var str = sss.split("");
+
+				$('#code-country'+(k+1)).html(str[3]+str[4]);
+				$('#first-nums'+(k+1)).html(str[5]+str[6]+str[7]);			  
+				$('#second-nums'+(k+1)).html(str[8]+str[9]);
+				$('#third-nums'+(k+1)).html(str[10]+str[11]);
+			}
+		}, 6500);
+		////////------------ ------------------ --------------------- ----------////
+		
+		//localStorage.removeItem('winCount');	/// Clearing localStorage
+		//localStorage.removeItem('winners');
+}
+</script>
+</body>
+</html>
