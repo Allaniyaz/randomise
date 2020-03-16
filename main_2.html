@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>	
-	<title>Лотерея</title>
+	<title>Қарақалпақ Лотерея</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
 	<script type="text/javascript" src="js/jquery/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
@@ -15,7 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="css/loading/style.css">		
 <!-- ODOMETER js lib configuration > --->
 	<style>
-		.odometer { font-size: 40px; }
+		.odometer { font-size: 150px; }
 	</style>
 	<script>
 		window.odometerOptions = {
@@ -29,32 +29,53 @@
 
 <!-- ODOMETER js lib configuration > --->	
 </head>
-<body>
+<body style="margin: 0;">
 
 	<div class="container">
 		<div class="row" style="justify-content: center;">
 			<div class="col-12 text-center" id="div-big">
-				<h2 class="" style="color: orange;">Жеңимпазлар <button class="btn btn-primary" onclick="showWinners()">Баслаў</button></h2><br>		
-				<div class="div-form div-rand" style="display: none;">
-					<div id="gen1">
-						<div class="odometer">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="code-country1">90</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="first-nums1-1">9</div>&nbsp;<div class="odometer" id="first-nums1-2">9</div>&nbsp;<div class="odometer" id="first-nums1-3">8</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="second-nums1-1">9</div>&nbsp;<div class="odometer" id="second-nums1-2">9</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="third-nums1-1">9</div>&nbsp;<div class="odometer" id="third-nums1-2">9</div> <br><br>
-					</div>
-					<div id="gen2">
-						<div class="odometer">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="code-country2">90</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="first-nums2-1">9</div>&nbsp;<div class="odometer" id="first-nums2-2">9</div>&nbsp;<div class="odometer" id="first-nums2-3">8</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="second-nums2-1">9</div>&nbsp;<div class="odometer" id="second-nums2-2">9</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="third-nums2-1">9</div>&nbsp;<div class="odometer" id="third-nums2-2">9</div> <br><br>
-					</div>
-					<div id="gen3">
-						<div class="odometer">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="code-country3">90</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="first-nums3-1">9</div>&nbsp;<div class="odometer" id="first-nums3-2">9</div>&nbsp;<div class="odometer" id="first-nums3-3">8</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="second-nums3-1">9</div>&nbsp;<div class="odometer" id="second-nums3-2">9</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="third-nums3-1">9</div>&nbsp;<div class="odometer" id="third-nums3-2">9</div> <br><br>
-					</div>
-					<div id="gen4">
-						<div class="odometer">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="code-country4">90</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="first-nums4-1">9</div>&nbsp;<div class="odometer" id="first-nums4-2">9</div>&nbsp;<div class="odometer" id="first-nums4-3">8</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="second-nums4-1">9</div>&nbsp;<div class="odometer" id="second-nums4-2">9</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="third-nums4-1">9</div>&nbsp;<div class="odometer" id="third-nums4-2">9</div> <br><br>
-					</div>
-					<div id="gen5">
-						<div class="odometer">998</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="code-country5">90</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="first-nums5-1">9</div>&nbsp;<div class="odometer" id="first-nums5-2">9</div>&nbsp;<div class="odometer" id="first-nums5-3">8</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="second-nums5-1">9</div>&nbsp;<div class="odometer" id="second-nums5-2">9</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class="odometer" id="third-nums5-1">9</div>&nbsp;<div class="odometer" id="third-nums5-2">9</div> <br><br>
-					</div>
-				</div>
 			</div>	
 		</div>
 	</div>
+
+
+			<div style="/*margin-left: 40px;*/ position: absolute; margin: 20px; top: 30%; transform: translate(0, -50%);">
+				<h1 class="text-center" style="color: darkorange; font-size: 100px;">Жеңимпаз</h1><br>		
+				<div class="div-form div-rand" style="">
+					<div id="gen1">
+						<div class="odometer" id="code-country1-1">0</div>&nbsp;<div class="odometer" id="code-country1-2">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="first-nums1-1">0</div>&nbsp;<div class="odometer" id="first-nums1-2">0</div>&nbsp;<div class="odometer" id="first-nums1-3">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="second-nums1-1">0</div>&nbsp;<div class="odometer" id="second-nums1-2">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="third-nums1-1">0</div>&nbsp;<div class="odometer" id="third-nums1-2">0</div> <br><br>
+					</div>
+					<div id="gen2" style="display: none;">
+						<div class="odometer" id="code-country2-1">0</div>&nbsp;<div class="odometer" id="code-country2-2">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="first-nums2-1">0</div>&nbsp;<div class="odometer" id="first-nums2-2">0</div>&nbsp;<div class="odometer" id="first-nums2-3">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="second-nums2-1">0</div>&nbsp;<div class="odometer" id="second-nums2-2">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="third-nums2-1">0</div>&nbsp;<div class="odometer" id="third-nums2-2">0</div> <br><br>
+					</div>
+					<div id="gen3" style="display: none;">
+						<div class="odometer" id="code-country3-1">0</div>&nbsp;<div class="odometer" id="code-country3-2">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="first-nums3-1">0</div>&nbsp;<div class="odometer" id="first-nums3-2">0</div>&nbsp;<div class="odometer" id="first-nums3-3">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="second-nums3-1">0</div>&nbsp;<div class="odometer" id="second-nums3-2">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="third-nums3-1">0</div>&nbsp;<div class="odometer" id="third-nums3-2">0</div> <br><br>
+					</div>
+					<div id="gen4" style="display: none;">
+						<div class="odometer" id="code-country4-1">0</div>&nbsp;<div class="odometer" id="code-country4-2">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="first-nums4-1">0</div>&nbsp;<div class="odometer" id="first-nums4-2">0</div>&nbsp;<div class="odometer" id="first-nums4-3">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="second-nums4-1">0</div>&nbsp;<div class="odometer" id="second-nums4-2">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="third-nums4-1">0</div>&nbsp;<div class="odometer" id="third-nums4-2">0</div> <br><br>
+					</div>
+					<div id="gen5" style="display: none;">
+						<div class="odometer" id="code-country5-1">0</div>&nbsp;<div class="odometer" id="code-country5-2">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="first-nums5-1">0</div>&nbsp;<div class="odometer" id="first-nums5-2">0</div>&nbsp;<div class="odometer" id="first-nums5-3">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="second-nums5-1">0</div>&nbsp;<div class="odometer" id="second-nums5-2">0</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="odometer" id="third-nums5-1">0</div>&nbsp;<div class="odometer" id="third-nums5-2">0</div> <br><br>
+					</div>
+				</div>
+			</div>
+
+
 
 <div id="loading" style="display: none; margin: 0; position: absolute; left: 50%; top: 50%; transform: translate(0, -50%);">
 	<div class="load-3" style="padding-bottom: 10px;">&nbsp;
